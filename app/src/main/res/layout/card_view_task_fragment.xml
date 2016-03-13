@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:padding="1dp"
+
+    >
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/card_view_team_management"
+        card_view:cardCornerRadius="10dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            >
+
+            <ImageView
+                android:id="@+id/id_circle"
+                android:layout_width="25dp"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/circle"
+                />
+
+            <TextView
+                android:maxLength="15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:textSize="25sp"
+                android:textColor="@color/primary_text"
+                android:layout_toRightOf="@+id/id_circle"
+                android:id="@+id/id_task_fragment_title"
+                android:text="@string/task_title"
+                />
+
+            <TextView
+                android:textSize="15sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/secondary_text"
+                android:layout_toRightOf="@+id/id_circle"
+                android:layout_below="@+id/id_task_fragment_title"
+                android:id="@+id/id_task_fragment_date"
+                android:text="@string/data"
+
+                />
+
+            <TextView
+                android:textSize="15sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="25dp"
+                android:layout_toRightOf="@+id/id_task_fragment_date"
+                android:layout_below="@+id/id_task_fragment_title"
+                android:id="@+id/id_task_fragment_time"
+                android:textColor="@color/secondary_text"
+                android:text="@string/time" />
+
+            <TextView
+                android:maxLength="11"
+                android:paddingLeft="25dp"
+                android:layout_toRightOf="@+id/id_task_fragment_time"
+                android:layout_below="@+id/id_task_fragment_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/secondary_text"
+                android:id="@+id/id_task_fragment_category"
+                android:textSize="15sp"
+                android:text="@string/category"/>
+
+            <TextView
+                android:maxLength="10"
+                android:paddingLeft="25dp"
+                android:layout_toRightOf="@+id/id_task_fragment_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/secondary_text"
+                android:id="@+id/id_task_fragment_status"
+                android:textSize="15sp"
+                android:text="@string/status"
+                />
+            <ImageView
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:id="@+id/id_status_v"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/i_v_sign"
+                />
+            <ImageView
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:id="@+id/id_status_x"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_x_sign"
+                />
+
+            <TextView
+                android:maxLength="10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/secondary_text"
+                android:id="@+id/id_task_fragment_user"
+                android:textSize="15sp"
+                android:paddingTop="5dp"
+                android:layout_toRightOf="@+id/id_circle"
+                android:text="@string/user_email"
+                android:layout_below="@+id/id_task_fragment_date"
+
+                />
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

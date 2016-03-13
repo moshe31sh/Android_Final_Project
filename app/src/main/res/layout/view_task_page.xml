@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/divider"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp">
+
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title"
+            android:ems="10"
+            android:textColor="@color/primary_text"
+            android:textSize="30dp"
+            android:textAlignment="center"
+            android:id="@+id/id_view_task_title"
+            android:maxLength="20"
+            android:layout_marginTop="20dp" />
+
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Category:"
+                android:textColor="@color/primary_text"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:id="@+id/textView3"
+                />
+
+            <Spinner
+                android:id="@+id/Category_array"
+                android:prompt="@string/category"
+                android:layout_width="120dp"
+                android:textSize="20sp"
+                android:textColor="@color/secondary_text"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/category"
+                android:ems="10"
+                android:textColor="@color/secondary_text"
+                android:maxLength="20"
+                android:textSize="20sp"
+                android:layout_marginLeft="100dp"
+                android:id="@+id/id_view_task_category"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Notes:"
+                android:textColor="@color/primary_text"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:id="@+id/textView11" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:textSize="20sp"
+                android:maxLines="5"
+                android:maxLength="300"
+                android:textColor="@color/secondary_text"
+                android:text="@string/notes"
+                android:layout_marginLeft="100dp"
+                android:id="@+id/id_view_task_notes"
+                />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp">
+
+            <Spinner
+                android:id="@+id/Priority_array"
+                android:prompt="@string/priority"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="@color/secondary_text"
+                android:layout_marginLeft="100dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:textSize="20sp"
+                android:text="@string/priority"
+                android:maxLength="20"
+                android:textColor="@color/secondary_text"
+                android:layout_marginLeft="100dp"
+                android:id="@+id/id_view_task_priority"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Priority:"
+                android:textColor="@color/primary_text"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:id="@+id/textView12" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:textSize="20sp"
+                android:text="@string/date"
+                android:textColor="@color/secondary_text"
+                android:layout_marginLeft="100dp"
+                android:id="@+id/id_view_task_date"
+                android:maxLength="20"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date:"
+                android:textColor="@color/primary_text"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:id="@+id/textView13" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:textSize="20sp"
+                android:text="@string/time"
+                android:id="@+id/id_view_task_time"
+                android:layout_marginLeft="100dp"
+                android:maxLength="20"
+                android:textColor="@color/secondary_text"
+                />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Time:"
+                android:textColor="@color/primary_text"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:id="@+id/textView14" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Status:"
+                android:textColor="@color/primary_text"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:id="@+id/id_status_tv"
+                />
+
+
+            <Spinner
+                android:id="@+id/id_status_array"
+                android:prompt="@string/status"
+                android:layout_width="120dp"
+                android:textSize="20sp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/secondary_text"
+                android:layout_marginLeft="100dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:textSize="20sp"
+                android:text="@string/status"
+                android:id="@+id/id_view_task_status"
+                android:layout_marginLeft="100dp"
+                android:maxLength="20"
+                android:textColor="@color/secondary_text"
+                />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/id_task_view_camera"
+                android:layout_toRightOf="@+id/id_status_array"
+                style="@android:style/Widget.Holo.Button.Borderless"
+                android:src="@drawable/ic_camera"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/id_task_view_employee"
+            android:paddingTop="0dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Employee:"
+                android:textColor="@color/primary_text"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:id="@+id/id_employee_tv"
+                />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:textSize="20sp"
+                android:text="@string/employee"
+                android:id="@+id/id_view_task_employee"
+                android:layout_marginLeft="100dp"
+                android:maxLength="20"
+                android:textColor="@color/secondary_text"
+                />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:id="@+id/task_view_pic_rel"
+            android:paddingTop="20dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/id_task_view_pic"
+                />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/id_task_view_waiting_rel"
+           >
+
+
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/id_view_task_accept_button"
+                android:text="@string/accept_task"
+                android:textAllCaps="false"
+                android:textColor="#388E3C"
+                android:textSize="20sp"
+                style="?android:attr/borderlessButtonStyle"
+ />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/id_view_task_reject_button"
+                android:text="@string/reject_task"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                style="?android:attr/borderlessButtonStyle"
+                android:textColor="#FF0000"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/id_view_task_accept_button"
+                />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/id_view_task_ok_button"
+                android:text="@string/ok"
+                android:textSize="20sp"
+                android:textColor="@color/primary_text"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_centerInParent="true"
+                />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/id_view_task_cancel_button"
+                android:text="@string/cancel"
+                android:textSize="20sp"
+                android:textColor="@color/primary_text"
+                android:layout_alignParentLeft="true"
+                style="?android:attr/borderlessButtonStyle"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/id_view_task_save_button"
+                android:text="@string/save"
+                android:textSize="20sp"
+                android:textColor="@color/primary_text"
+                android:layout_alignParentRight="true"
+                style="?android:attr/borderlessButtonStyle"/>
+
+                />
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>

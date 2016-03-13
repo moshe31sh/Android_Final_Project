@@ -1,0 +1,78 @@
+{
+  "project_info": {
+    "project_id": "omega-will-124014",
+    "project_number": "859532420905",
+    "name": "Todolist"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:859532420905:android:d122849822d3666b",
+        "client_id": "android:il.ac.shenkar.ots",
+        "client_type": 1,
+        "android_client_info": {
+          "package_name": "il.ac.shenkar.ots",
+          "certificate_hash": []
+        }
+      },
+      "oauth_client": [],
+      "api_key": [],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "cloud_messaging_service": {
+          "status": 1,
+          "apns_config": []
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "google_signin_service": {
+          "status": 1
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:859532420905:android:13a07fb572663049",
+        "client_id": "android:ots.il.ac.shenkar.ots",
+        "client_type": 1,
+        "android_client_info": {
+          "package_name": "ots.il.ac.shenkar.ots",
+          "certificate_hash": []
+        }
+      },
+      "oauth_client": [],
+      "api_key": [],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-74912236-1"
+          }
+        },
+        "cloud_messaging_service": {
+          "status": 1,
+          "apns_config": []
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "google_signin_service": {
+          "status": 1
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "client_info": [],
+  "ARTIFACT_VERSION": "1"
+}

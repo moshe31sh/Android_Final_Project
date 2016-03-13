@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/divider"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:textColor="@color/primary_text"
+            android:text="@string/create_task"
+            android:id="@+id/textView9"
+            android:layout_gravity="center_horizontal" />
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/primary_text"
+                android:textSize="20sp"
+                android:text="@string/title"
+                android:layout_alignParentTop="true">
+
+            </TextView>
+
+
+            <EditText
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:textColorHint="@android:color/darker_gray"
+                android:background="#fff"
+                android:textColor="@color/secondary_text"
+                android:ems="10"
+                android:textSize="20sp"
+                android:maxLength="20"
+                android:paddingLeft="2dp"
+                android:layout_marginLeft="100dp"
+                android:id="@+id/id_task_title"
+                />
+            </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Category"
+                android:textColor="@color/primary_text"
+                android:textSize="20sp"
+                android:id="@+id/textView3"
+                android:layout_alignParentLeft="true"
+            />
+
+            <Spinner
+                android:id="@+id/Category_array"
+                android:prompt="@string/category"
+                android:layout_width="120dp"
+                android:textSize="20sp"
+                android:paddingLeft="2dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/secondary_text"
+                android:layout_marginLeft="100dp"
+            />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Notes"
+                android:textColor="@color/primary_text"
+                android:textSize="20sp"
+                android:id="@+id/textView4"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+            <EditText
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:textColorHint="@android:color/darker_gray"
+                android:textColor="@color/secondary_text"
+                android:background="#fff"
+                android:textSize="20sp"
+                android:maxLines="5"
+                android:paddingLeft="2dp"
+                android:maxLength="300"
+                android:id="@+id/id_task_content"
+                android:layout_marginLeft="100dp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Priority"
+                android:textColor="@color/primary_text"
+                android:textSize="20sp"
+                android:id="@+id/textView5"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <Spinner
+                android:id="@+id/Priority_array"
+                android:prompt="@string/priority"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:paddingLeft="2dp"
+                android:textColor="@color/secondary_text"
+                android:layout_marginLeft="100dp" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date"
+                android:textColor="@color/primary_text"
+                android:textSize="20sp"
+                android:id="@+id/textView6"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                />
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:inputType="time"
+                android:paddingLeft="2dp"
+                android:textColorHint="@android:color/darker_gray"
+                android:background="#fff"
+                android:textColor="@color/secondary_text"
+                android:ems="10"
+                android:textSize="20sp"
+                android:maxLength="20"
+                android:id="@+id/id_task_date"
+                android:layout_alignTop="@+id/textView6"
+                android:layout_marginLeft="100dp"/>
+
+            <ImageButton
+                android:id="@+id/btnChangeDate"
+                style="@android:style/Widget.Holo.Button.Borderless"
+                android:layout_width="30dip"
+                android:layout_height="30dip"
+                android:src="@drawable/ic_action_calander"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true" />
+            <CheckBox
+                android:id="@+id/id_today_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/today"
+                android:textColor="@color/primary_text"
+                android:textSize="15sp"
+                android:layout_below="@+id/textView6"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <CheckBox
+                android:id="@+id/id_tomorrow_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tomorrow"
+                android:textColor="@color/primary_text"
+                android:textSize="15sp"
+                android:layout_below="@+id/id_today_checkbox"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Time"
+                android:textColor="@color/primary_text"
+                android:textSize="20sp"
+                android:id="@+id/textView8"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:inputType="time"
+                android:textColorHint="@android:color/darker_gray"
+                android:background="#fff"
+                android:textColor="@color/primary_text"
+                android:ems="10"
+                android:textSize="20sp"
+                android:paddingLeft="2dp"
+                android:maxLength="20"
+                android:id="@+id/id_task_time"
+                android:layout_marginLeft="100dp">
+
+            </TextView>
+            <ImageButton
+                android:id="@+id/btnChangeTime"
+                style="@android:style/Widget.Holo.Button.Borderless"
+                android:layout_width="30dip"
+                android:layout_height="30dip"
+                android:src="@drawable/ic_action_clock"
+                android:layout_alignParentRight="true" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Users"
+                android:textColor="@color/primary_text"
+                android:textSize="20sp"
+                android:id="@+id/textView7"
+ />
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:textColorHint="@android:color/darker_gray"
+                android:background="#fff"
+                android:textColor="@color/secondary_text"
+                android:maxLines="4"
+                android:ems="10"
+                android:paddingLeft="2dp"
+                android:textSize="20sp"
+                android:maxLength="100"
+                android:id="@+id/id_task_to_users"
+                android:layout_marginLeft="100dp"
+     />
+            <ImageButton
+                android:id="@+id/btnAddUsers"
+                style="@android:style/Widget.Holo.Button.Borderless"
+                android:layout_width="30dip"
+                android:layout_height="30dip"
+                android:src="@drawable/ic_action_users"
+                android:layout_alignParentRight="true"
+             />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="50dp">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/id_add_member_create_button"
+                android:text="@string/create"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/primary_text"
+                android:textSize="20sp"
+                style="?android:attr/borderlessButtonStyle"
+/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/id_add_member_cancel_button"
+                android:text="@string/cancel"
+                android:textColor="@color/primary_text"
+                android:textSize="20sp"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_alignParentLeft="true"
+                 />
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>

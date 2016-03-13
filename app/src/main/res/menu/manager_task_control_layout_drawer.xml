@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Manage Team">
+        <menu>
+            <item
+                android:id="@+id/nav_user_list"
+                android:icon="@drawable/ic_action_users"
+                android:title="@string/user_list" />
+            <item
+                android:id="@+id/nav_add_user"
+                android:icon="@drawable/ic_launcher_usres"
+                android:title="@string/add_user" />
+        </menu>
+    </item>
+    <item android:title="Setting">
+        <menu>
+            <item
+                android:id="@+id/nav_check_default"
+                android:icon="@drawable/ic_action_notifcation"
+                android:title="@string/check_default" />
+            <item
+                android:id="@+id/nav_check_manual"
+                android:icon="@drawable/ic_action_timer"
+                android:title="@string/check_manual" />
+        </menu>
+    </item>
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_log_out"
+            android:icon="@drawable/ic_action_logout"
+            android:title="@string/logout" />
+    </group>
+
+    <item android:title="About">
+        <menu>
+            <item
+                android:id="@+id/nav_name_version"
+                android:icon="@drawable/ic_action_info"
+                android:title="@string/app_name_version" />
+            <item
+                android:id="@+id/nav_students"
+                android:icon="@drawable/ic_action_students"
+                android:title="@string/student_name" />
+        </menu>
+    </item>
+
+</menu>

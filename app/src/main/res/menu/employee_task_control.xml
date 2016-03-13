@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Setting">
+        <menu>
+            <item
+                android:id="@+id/nav_employee_check_default"
+                android:icon="@drawable/ic_action_notifcation"
+                android:title="@string/check_default" />
+            <item
+                android:id="@+id/nav_employee_check_manual"
+                android:icon="@drawable/ic_action_timer"
+                android:title="@string/check_manual" />
+        </menu>
+    </item>
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_employee_log_out"
+            android:icon="@drawable/ic_action_logout"
+            android:title="@string/logout" />
+    </group>
+
+    <item android:title="About">
+        <menu>
+            <item
+                android:id="@+id/nav_employee_name_version"
+                android:icon="@drawable/ic_action_info"
+                android:title="@string/app_name_version" />
+            <item
+                android:id="@+id/nav_employee_students"
+                android:icon="@drawable/ic_action_students"
+                android:title="@string/student_name" />
+        </menu>
+    </item>
+
+</menu>

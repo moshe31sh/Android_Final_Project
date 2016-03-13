@@ -1,0 +1,111 @@
+<resources>
+    <string name="app_name">OTS</string>
+    <string name="title_activity_team_managment">TeamManagmentActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="team">Team</string>
+    <string name="members">00</string>
+    <string name="task">00</string>
+    <string name="action_new_team">New team</string>
+    <string name="add_group_title">Add group particpants</string>
+    <string name="team_name">Team name</string>
+    <string name="next">Next</string>
+    <string name="name">First name</string>
+    <string name="lname">Last name</string>
+    <string name="user_email">Email</string>
+    <string name="password">Password</string>
+    <string name="register_user">Add new member</string>
+    <string name="create">Create</string>
+    <string name="cancel">Cancel</string>
+    <string name="task_title">Task title</string>
+    <string name="data">00:00:00</string>
+    <string name="title">Title</string>
+    <string name="category">Category</string>
+    <string name="priority">Priority</string>
+    <string name="status">Status</string>
+    <string name="selected_time">Select time</string>
+    <string name="pick_time">Pick time</string>
+    <string name="today">Today</string>
+    <string name="tomorrow">Tomorrow</string>
+    <string name="mode_24_hours">24 hours mode</string>
+    <string name="set">Set</string>
+    <string name="create_task">Create Task</string>
+    <string name="time">00:00</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="register">Register</string>
+    <string name="notes">Notes</string>
+    <string name="date">00/00/00</string>
+    <string name="view_task">View task</string>
+    <string name="accept_task">Accept task</string>
+    <string name="reject_task">Reject task</string>
+    <string name="ok">Ok</string>
+    <string name="employee">Employee</string>
+    <string name="action_sort">Sort task by</string>
+    <string name="no_current_tasks">No current tasks</string>
+    <string name="action_refresh">Refresh</string>
+    <string name="add_team">Add team</string>
+    <string name="check_default">Check for new tasks every 5 minutes</string>
+    <string name="check_manual">Set refreshment interval </string>
+    <string name="set_timer">Set timer to update</string>
+    <string name="student_name">student names</string>
+    <string name="logout">Log out</string>
+    <!--<string name="google_app_id">859532420905</string>-->
+    <string-array name="priority">
+        <item>Normal</item>
+        <item>Urgent</item>
+        <item>Low</item>
+    </string-array>
+
+    <string-array name="status">
+        <item>In process</item>
+        <item>Done</item>
+    </string-array>
+
+    <string-array name="manager_status">
+        <item>Waiting</item>
+        <item>Reject</item>
+    </string-array>
+
+    <string-array name="category">
+        <item>Cleaning</item>
+        <item>Electricity</item>
+        <item>Computers</item>
+        <item>General</item>
+        <item>Other</item>
+    </string-array>
+
+
+    <string-array name="refresh">
+        <item>15 Minute</item>
+        <item>30 Minuets</item>
+        <item>1 Hour</item>
+        <item>12 Hours</item>
+        <item>24 Hours</item>
+    </string-array>
+
+    <string name="title_activity_manager_task_control">ManagerTaskControlActivity</string>
+    <string name="create_user">Create User</string>
+    <string name="user_list">User list</string>
+    <string name="add_user">Add user</string>
+    <string name="app_name_version">Name + Version</string>
+    <string name="close">Close</string>
+    <string name="save">Save</string>
+    <string name="view_user">View user</string>
+    <string name="application">Name</string>
+    <string name="version">Version</string>
+    <string name="version_number">0.1</string>
+    <string name="about">OTS for android</string>
+    <string name="student1">Eidan Kleinman</string>
+    <string name="student2">Ohad Sasson</string>
+    <string name="student3">Moshe Shimon</string>
+    <string name="refresh">Select time</string>
+    <string name="delete">Delete</string>
+    <string name="phone">Phone</string>
+    <string name="add_users">Add users</string>
+    <string name="logo">OTS</string>
+
+
+</resources>
