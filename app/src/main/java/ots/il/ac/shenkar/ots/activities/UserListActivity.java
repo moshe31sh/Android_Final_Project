@@ -38,6 +38,7 @@ import ots.il.ac.shenkar.ots.R;
 import ots.il.ac.shenkar.ots.apputiles.AnalyticsApplication;
 import ots.il.ac.shenkar.ots.apputiles.AppConst;
 import ots.il.ac.shenkar.ots.apputiles.AppUtils;
+import ots.il.ac.shenkar.ots.common.Task;
 import ots.il.ac.shenkar.ots.common.User;
 import ots.il.ac.shenkar.ots.controlers.AddMembersAdapter;
 import ots.il.ac.shenkar.ots.controlers.AppController;
@@ -56,6 +57,7 @@ public class UserListActivity extends AppCompatActivity implements ItemLongClick
     private AppController mController;
     private UserListAdapter mAdapter;
     private List<User> userList;
+    private List<Task> taskList;
     private FloatingActionButton fab;
     private ProgressDialog mProgress;
     private SwipeRefreshLayout mSwipeRefreshLayout;
@@ -123,10 +125,10 @@ public class UserListActivity extends AppCompatActivity implements ItemLongClick
 
     @Override
     public void onItemClick(View view, int pos) {
-        TextView mTvmail , mTvName , mTvLName  , mTvPhone;
-        Button mBtnClose , mBtnSave;
+        TextView mTvmail , mTvName , mTvLName  , mTvPhone ,mTvWaiting, mTvInProcess , mTvDone , mTvRejected;
+        Button mBtnClose ;
         TextView mTvTitle;
-
+        taskList = mController.getAllTaskFromLocalDb();
         User user = userList.get(pos);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
@@ -138,16 +140,25 @@ public class UserListActivity extends AppCompatActivity implements ItemLongClick
         mTvLName = (TextView) dialogView.findViewById(R.id.id_view_lname);
         mTvPhone = (TextView) dialogView.findViewById(R.id.id_view_phone);
         mTvTitle = (TextView) dialogView.findViewById(R.id.id_view_member_title);
+        mTvWaiting =(TextView) dialogView.findViewById(R.id.id_view_user_waiting);
+        mTvInProcess =(TextView) dialogView.findViewById(R.id.id_view_user_in_process);
+        mTvDone =(TextView) dialogView.findViewById(R.id.id_view_user_done);
+        mTvRejected = (TextView) dialogView.findViewById(R.id.id_view_user_rejected);
 
         mBtnClose = (Button) dialogView.findViewById(R.id.id_view_member_close_button);
 
         dialog.setView(dialogView);
 
-        mTvTitle.setText(user.getMail());
+        mTvTitle.setText(user.getUserName() + " " + user.getUserLName());
         mTvmail.setText(user.getMail());
         mTvName.setText(user.getUserLName());
         mTvLName.setText(user.getUserName());
         mTvPhone.setText(user.getUserPhone());
+        mTvWaiting.setText(AppUtils.countTaskByFactor(taskList, AppConst.WAITING, user.getMail()));
+        mTvInProcess.setText(AppUtils.countTaskByFactor(taskList , AppConst.IN_PROCESS,user.getMail()));
+        mTvDone.setText(AppUtils.countTaskByFactor(taskList , AppConst.DONE,user.getMail()));
+        mTvRejected.setText(AppUtils.countTaskByFactor(taskList , AppConst.REJECT,user.getMail()));
+
         mBtnClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

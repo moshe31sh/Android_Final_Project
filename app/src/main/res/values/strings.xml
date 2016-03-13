@@ -47,12 +47,11 @@
     <string name="no_current_tasks">No current tasks</string>
     <string name="action_refresh">Refresh</string>
     <string name="add_team">Add team</string>
-    <string name="check_default">Check for new tasks every 5 minutes</string>
-    <string name="check_manual">Set refreshment interval </string>
+    <string name="check_default">Set refresh tasks to 5 minutes</string>
+    <string name="check_manual">Set refresh tasks manual</string>
     <string name="set_timer">Set timer to update</string>
-    <string name="student_name">student names</string>
+    <string name="student_name">students names</string>
     <string name="logout">Log out</string>
-    <!--<string name="google_app_id">859532420905</string>-->
     <string-array name="priority">
         <item>Normal</item>
         <item>Urgent</item>
@@ -93,7 +92,7 @@
     <string name="app_name_version">Name + Version</string>
     <string name="close">Close</string>
     <string name="save">Save</string>
-    <string name="view_user">View user</string>
+    <string name="view_user">View User</string>
     <string name="application">Name</string>
     <string name="version">Version</string>
     <string name="version_number">1.0</string>
@@ -106,6 +105,15 @@
     <string name="phone">Phone</string>
     <string name="add_users">Add users</string>
     <string name="logo">OTS</string>
+    <string name="Waiting_task">Waiting tasks:</string>
+    <string name="task_summary">Tasks Summary</string>
+    <string name="zero">0</string>
+    <string name="in_process">In process tasks:</string>
+    <string name="done_task">Done tasks:</string>
+    <string name="rejected_task">Rejected tasks:</string>
+
+
+
 
 
 </resources>

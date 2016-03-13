@@ -16,7 +16,6 @@ import ots.il.ac.shenkar.ots.fragment.WaitingTaskFragment;
 public class EmployeePagerAdapter  extends FragmentStatePagerAdapter {
 
     private int mNumOfTabs;
-    private String employeeName;
 
 
     public EmployeePagerAdapter(FragmentManager fm, int numOfTabs, String employeeName) {

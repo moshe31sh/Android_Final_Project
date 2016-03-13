@@ -319,4 +319,19 @@ public abstract class AppUtils {
     }
 
 
+    /**
+     * this method count task bt factor (Waiting etc..)
+     * @param tasks
+     * @param factor
+     * @return
+     */
+    public static String countTaskByFactor(List<Task>tasks , String factor , String user){
+        Integer counter = 0;
+        for(Task task : tasks){
+            if(task.getTaskStatus().equals(factor) && task.getUser().equals(user)){
+                counter++;
+            }
+        }
+        return counter.toString();
+    }
 }

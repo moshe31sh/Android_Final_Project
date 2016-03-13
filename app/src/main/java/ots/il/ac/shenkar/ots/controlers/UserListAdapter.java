@@ -49,6 +49,8 @@ public class UserListAdapter  extends RecyclerView.Adapter<UserListAdapter.ViewH
         holder.mUserFName.setText(user.getUserName());
         holder.mUserLName.setText(user.getUserLName());
         holder.mUserPhone.setText(user.getUserPhone());
+        holder.mUserEmail.setText(user.getMail());
+
 
 
 
@@ -74,6 +76,7 @@ public class UserListAdapter  extends RecyclerView.Adapter<UserListAdapter.ViewH
         private TextView mUserLName;
         private TextView mUserPhone;
         private CardView mCardView;
+        private TextView mUserEmail;
 
         private boolean click;
 
@@ -88,6 +91,7 @@ public class UserListAdapter  extends RecyclerView.Adapter<UserListAdapter.ViewH
             mUserLName = (TextView) itemView.findViewById(R.id.id_user_list_lname);
             mUserPhone = (TextView) itemView.findViewById(R.id.id_user_list_phone);
             mCardView = (CardView) itemView.findViewById(R.id.card_view_team_management);
+            mUserEmail = (TextView) itemView.findViewById(R.id.id_user_list_email);
             itemView.setOnClickListener(this);
             itemView.setOnLongClickListener(this);
 
