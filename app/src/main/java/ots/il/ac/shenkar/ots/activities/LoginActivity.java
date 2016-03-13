@@ -98,9 +98,14 @@ public class LoginActivity extends AppCompatActivity {
     public void loginOnClick(View view) {
         view.startAnimation(animAlpha);
         boolean isError = false;
+        boolean emailPattenErr = true;
         String emailStr = mEEmail.getText().toString().trim();
         String passStr = mEPassword.getText().toString().trim();
         //check if email anf password fields are empty
+        if(!AppUtils.isValidEmail(emailStr)){
+            mEEmail.setError("Illegal email address\n"+"Example:John@gmail.com");
+            emailPattenErr = false;
+        }
         if (emailStr.equals("")) {
             mEEmail.setError("Enter email");
             isError = true;
@@ -112,6 +117,8 @@ public class LoginActivity extends AppCompatActivity {
         }
         if (isError == true) {
             AppUtils.Toast(LoginActivity.this, AppConst.EMPTY_FIELDS);
+        } else if (!emailPattenErr){
+            AppUtils.Toast(this , AppConst.EMAIL_ERR);
         } else {
             progress.setMessage("Authenticating...");
             progress.show();

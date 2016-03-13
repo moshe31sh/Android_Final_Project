@@ -47,9 +47,8 @@ public class AppConst {
     public static final String NO_TASK ="No task to create" ;
     public static final String TIME_SET_DEFAULT ="Set refresh to 5 minutes";
     public static final String CANCEL ="Cancel" ;
+    public static final  String EMAIL_ERR ="Please check email address";
 
-
-    public static final Pattern EMAIL_PATTERN = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}$", Pattern.CASE_INSENSITIVE);
 
 
     //intent vars

@@ -9,6 +9,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.provider.ContactsContract;
+import android.util.Patterns;
 import android.widget.Toast;
 
 import com.parse.ParseObject;
@@ -24,6 +25,7 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.regex.Pattern;
 
 import ots.il.ac.shenkar.ots.common.Task;
 import ots.il.ac.shenkar.ots.common.User;
@@ -303,6 +305,17 @@ public abstract class AppUtils {
      */
     public static Bitmap createImageFromBytes(byte[] imageBytes){
         return BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.length);
+    }
+
+
+    /**
+     * this method validate email address
+     * @param email
+     * @return
+     */
+    public static boolean isValidEmail(String email) {
+        Pattern pattern = Patterns.EMAIL_ADDRESS;
+        return pattern.matcher(email).matches();
     }
 
 

@@ -49,12 +49,18 @@ public class RegisterActivity extends AppCompatActivity {
     public void registerOnClick(View view){
         boolean isEmpty = false;
         boolean isPassErr = false;
+        boolean emailPattenErr = true;
         String name = mEName.getText().toString().trim();
         String lName = mELName.getText().toString().trim();
         String email = mEEmail.getText().toString().trim();
-        String password = mEPassword.getText().toString().trim();
+          String password = mEPassword.getText().toString().trim();
         String rePassword = mERePassword.getText().toString().trim();
 ///check input from user
+        if(!AppUtils.isValidEmail(email)){
+            mEEmail.setError("Illegal email address\n"+"Example:John@gmail.com");
+            emailPattenErr = false;
+        }
+
         if (name.equals("")){
             mEName.setError("Enter name");
             isEmpty = true;
@@ -71,7 +77,7 @@ public class RegisterActivity extends AppCompatActivity {
             mEPassword.setError("Enter password");
             isEmpty = true;
         }
-        if ( password.length() < 6){
+        if ( password.length() < 6 ){
             mEPassword.setError("Password need to be at list 6 letters");
             isPassErr = true;
         }
@@ -87,10 +93,12 @@ public class RegisterActivity extends AppCompatActivity {
         } else if(isPassErr == true){
             AppUtils.Toast(RegisterActivity.this, AppConst.PASS_ERROR);
 
-        }else  if(!password.equals(rePassword)){
+        }else  if(!password.equals(rePassword)) {
             AppUtils.Toast(RegisterActivity.this, AppConst.NOT_MATCH_PASS);
             mEPassword.setText("");
             mERePassword.setText("");
+        } else if (!emailPattenErr){
+            AppUtils.Toast(this , AppConst.EMAIL_ERR);
         }else{
             progress = new ProgressDialog(this);
             progress.setMessage("Registering...");
