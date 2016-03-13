@@ -339,6 +339,8 @@ public class EmployeeTaskControlActivity extends AppCompatActivity
                     mController.updateLocalDB(AppUtils.sortByTime(
                             (checkForNewTask(AppUtils.createTasksFromDB(parseObjectArrayList)))));
                     mController.notifyAllOnChanges();
+                }else{
+                    AppUtils.Toast(getApplication(),AppConst.CONNECTION_ERROR);
                 }
             }
         });

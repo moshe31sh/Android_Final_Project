@@ -453,6 +453,8 @@ public class ManagerTaskControlActivity extends AppCompatActivity
                     mController.updateLocalDB(AppUtils.createTasksFromDB(parseObjectArrayList));
                     mProgress.dismiss();
                     mController.notifyAllOnChanges();
+                }else{
+                    AppUtils.Toast(getApplication(),AppConst.CONNECTION_ERROR);
                 }
             }
         });

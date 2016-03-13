@@ -116,10 +116,14 @@ public class RegisterActivity extends AppCompatActivity {
             mController.signUp(manager, new SignUpCallback() {
                 @Override
                 public void done(ParseException e) {
-                    AppUtils.Toast(RegisterActivity.this, AppConst.REGISTER_SUCCEED);
-                    Intent registerIntent = new Intent(RegisterActivity.this, LoginActivity.class);
-                    startActivity(registerIntent);
-                    finish();
+                    if( e == null) {
+                        AppUtils.Toast(RegisterActivity.this, AppConst.REGISTER_SUCCEED);
+                        Intent registerIntent = new Intent(RegisterActivity.this, LoginActivity.class);
+                        startActivity(registerIntent);
+                        finish();
+                    }else{
+                        AppUtils.Toast(getApplication(),AppConst.LOGIN_ERROR);
+                    }
                     progress.dismiss();
                 }
             }) ;

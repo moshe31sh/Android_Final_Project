@@ -21,12 +21,12 @@ public class AppConst {
     public static final String IN_PROCESS ="In process" ;
     public static final String DONE ="Done" ;
     public static final String REJECT ="Reject" ;
-    public static final String All ="All";
     public static final String SORTING ="Sorting..." ;
     public static final String MOST_TAKE_PIC ="Please take picture of your work";
     public static final String CONNECTION_ERROR ="No connection with the server, please try to refresh" ;
     public static final String DELETE_TASK ="Tasks deleted" ;
     public static final String APP_NAME ="Ots" ;
+    public static final String LOGIN_ERROR ="User all ready exist or connection error" ;
 
     public static String SharedPrefs_refreshInterval = "Refresh";
 

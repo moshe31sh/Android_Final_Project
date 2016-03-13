@@ -211,31 +211,31 @@ public class UserListActivity extends AppCompatActivity implements ItemLongClick
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
 
-                mController.getUserTask(currentUser.getMail(), new FindCallback() {
-                    @Override
-                    public void done(List objects, ParseException e) {
+                    mController.getUserTask(currentUser.getMail(), new FindCallback() {
+                        @Override
+                        public void done(List objects, ParseException e) {
 
-                    }
-
-                    @Override
-                    public void done(Object o, Throwable throwable) {
-                        ArrayList<ParseObject> parseObjectArrayList = (ArrayList<ParseObject>) o;
-                        for (int i = 0; i < parseObjectArrayList.size(); i++) {
-                            parseObjectArrayList.get(i).deleteInBackground();
                         }
-                        mController.deleteUser(currentUser, new DeleteCallback() {
-                            @Override
-                            public void done(ParseException e) {
-                                mProgress.dismiss();
-                                getAllUserFromDb();
+
+                        @Override
+                        public void done(Object o, Throwable throwable) {
+                            ArrayList<ParseObject> parseObjectArrayList = (ArrayList<ParseObject>) o;
+                            for (int i = 0; i < parseObjectArrayList.size(); i++) {
+                                parseObjectArrayList.get(i).deleteInBackground();
                             }
-                        });
-                        click = false;
-                        MenuItem item = menu.findItem(R.id.id_action_delete);
-                        item.setVisible(false);
-                        mProgress.dismiss();
-                    }
-                });
+                            mController.deleteUser(currentUser, new DeleteCallback() {
+                                @Override
+                                public void done(ParseException e) {
+                                    mProgress.dismiss();
+                                    getAllUserFromDb();
+                                }
+                            });
+                            click = false;
+                            MenuItem item = menu.findItem(R.id.id_action_delete);
+                            item.setVisible(false);
+                            mProgress.dismiss();
+                        }
+                    });
                     dialog.dismiss();
                 }
             });
@@ -260,20 +260,26 @@ public class UserListActivity extends AppCompatActivity implements ItemLongClick
         mProgress = new ProgressDialog(this);
         mProgress.setMessage("Retrieving users data...");
         mProgress.show();
-        mController.getAllUsers( manager, new FindCallback() {
-            @Override
-            public void done(List objects, ParseException e) {
+        mController.getAllUsers(manager, new FindCallback() {
+                    @Override
+                    public void done(List objects, ParseException e) {
 
-            }
+                    }
 
-            @Override
-            public void done(Object o, Throwable throwable) {
-                ArrayList<ParseObject> parseObjectArrayList = (ArrayList<ParseObject>) o;
-                userList = AppUtils.getUser(parseObjectArrayList);
-                mProgress.dismiss();
-                show();
-            }
-        });
+                    @Override
+                    public void done(Object o, Throwable throwable) {
+                        if (throwable == null) {
+                            ArrayList<ParseObject> parseObjectArrayList = (ArrayList<ParseObject>) o;
+                            userList = AppUtils.getUser(parseObjectArrayList);
+                            mProgress.dismiss();
+                            show();
+                        } else {
+                            AppUtils.Toast(getApplication(), AppConst.CONNECTION_ERROR);
+                        }
+                    }
+                }
+
+        );
     }
 
 
