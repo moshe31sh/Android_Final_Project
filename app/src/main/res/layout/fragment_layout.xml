@@ -5,6 +5,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:paddingLeft="5dp"
+        android:id="@+id/linear">
+
+        <TextView android:id="@+id/id_waiting_task"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="1dp"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="@string/total_task"
+            android:textColor="@color/primary_text"
+           />
+        <TextView android:id="@+id/id_task_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="1dp"
+            android:paddingLeft="5dp"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="@string/time"
+            android:textColor="#FF0000"
+            />
+    </LinearLayout>
 
 
 
@@ -12,15 +38,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/id_fragment_swipe"
+        android:layout_below="@+id/linear"
         xmlns:android="http://schemas.android.com/apk/res/android">
 
 
     <include
         android:id="@+id/id_fragment_recycle_view"
-        layout="@layout/recycle_view" />
+        layout="@layout/recycle_view"
+       />
 
 
     </android.support.v4.widget.SwipeRefreshLayout>
+
 
     <TextView
         android:layout_width="wrap_content"

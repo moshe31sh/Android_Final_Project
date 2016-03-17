@@ -62,7 +62,7 @@ public class WaitingTaskFragment extends Fragment implements ItemLongClickListen
     private ProgressDialog mProgress;
     private Task currentTask;
     private Animation animAlpha;
-    private TextView mTvEmptyWaitingList;
+    private TextView mTvEmptyWaitingList , waitingTask;
     private User user;
     private CloudRefreshReceiver r;
     private Menu menu;
@@ -100,7 +100,7 @@ public class WaitingTaskFragment extends Fragment implements ItemLongClickListen
         mController = new AppController(this.getContext());
         mTvEmptyWaitingList = (TextView) mView.findViewById(R.id.id_waiting_empty_list);
         mTvEmptyWaitingList.setVisibility(View.INVISIBLE);
-
+        waitingTask = (TextView) mView.findViewById(R.id.id_task_number);
         mRecyclerView = (RecyclerView) mView.findViewById(R.id.id_fragment_recycle_view);
         mRecyclerView.setHasFixedSize(true);
         // use a linear layout manager
@@ -124,6 +124,8 @@ public class WaitingTaskFragment extends Fragment implements ItemLongClickListen
     public void  show(){
 
         taskList = mController.getTasksListByStatus(AppConst.WAITING);
+        Integer numOfTask = taskList.size();
+        waitingTask.setText(numOfTask.toString());
         if (taskList.size() > 0){
             mTvEmptyWaitingList.setVisibility(View.INVISIBLE);
         }else{

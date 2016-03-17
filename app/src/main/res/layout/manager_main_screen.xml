@@ -37,6 +37,7 @@
         android:layout_alignLeft="@+id/id_manager_refresh"
         android:layout_alignStart="@+id/id_manager_refresh" />
 
+
     <android.support.v4.view.ViewPager
         android:id="@+id/id_manager_pager"
         android:layout_width="fill_parent"

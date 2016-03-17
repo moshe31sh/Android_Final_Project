@@ -57,7 +57,7 @@ public class AboutActivity extends AppCompatActivity {
             mTvS2.setVisibility(View.INVISIBLE);
             mTvS3.setVisibility(View.INVISIBLE);
         }else{
-            getSupportActionBar().setTitle("Student names");
+            getSupportActionBar().setTitle("Students names");
             mTvVersion.setVisibility(View.INVISIBLE);
             mTvVersionNum.setVisibility(View.INVISIBLE);
         }

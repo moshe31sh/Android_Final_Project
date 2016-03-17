@@ -151,8 +151,8 @@ public class UserListActivity extends AppCompatActivity implements ItemLongClick
 
         mTvTitle.setText(user.getUserName() + " " + user.getUserLName());
         mTvmail.setText(user.getMail());
-        mTvName.setText(user.getUserLName());
-        mTvLName.setText(user.getUserName());
+        mTvName.setText(user.getUserName());
+        mTvLName.setText(user.getUserLName());
         mTvPhone.setText(user.getUserPhone());
         mTvWaiting.setText(AppUtils.countTaskByFactor(taskList, AppConst.WAITING, user.getMail()));
         mTvInProcess.setText(AppUtils.countTaskByFactor(taskList , AppConst.IN_PROCESS,user.getMail()));

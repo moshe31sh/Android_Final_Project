@@ -59,7 +59,7 @@ public class RejectedTaskFragment  extends Fragment implements ItemLongClickList
     private ProgressDialog mProgress;
     private Task currentTask;
     private Animation animAlpha;
-    private TextView mTvEmptyWaitingList;
+    private TextView mTvEmptyWaitingList , waitingTask;
     private Menu menu;
     private boolean click;
     private List <Task> toDeleteList;
@@ -94,7 +94,7 @@ public class RejectedTaskFragment  extends Fragment implements ItemLongClickList
         mController = new AppController(this.getContext());
         mTvEmptyWaitingList = (TextView) mView.findViewById(R.id.id_waiting_empty_list);
         mTvEmptyWaitingList.setVisibility(View.INVISIBLE);
-
+        waitingTask = (TextView) mView.findViewById(R.id.id_task_number);
         mRecyclerView = (RecyclerView) mView.findViewById(R.id.id_fragment_recycle_view);
         mRecyclerView.setHasFixedSize(true);
         // use a linear layout manager
@@ -117,6 +117,8 @@ public class RejectedTaskFragment  extends Fragment implements ItemLongClickList
 
     public void show() {
         taskList = mController.getTasksListByStatus(AppConst.REJECT);
+        Integer numOfTask = mController.getTasksListByStatus(AppConst.WAITING).size();
+        waitingTask.setText(numOfTask.toString());
         mAdapter = new TasksFragmentAdapter(taskList, getContext());
         mAdapter.setmItemClickListener(this);
         mAdapter.setmItemLongClickListener(this);

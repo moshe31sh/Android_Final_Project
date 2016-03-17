@@ -87,7 +87,9 @@ public abstract class AppUtils {
             emailIntent.putExtra(Intent.EXTRA_TEXT, "\tHi\n" +
                     "\tYou have been invited to be a team member in an OTS Team created by me.\n" +
                     "\tUse this link to download and install the App from Google Play.\n" +
-                    "\t<LINK to Google Play download>");
+                    "\tUser name: your email address.\n" +
+                    "\tUser password: your phone number.\n" +
+                    "\thttps://play.google.com/store/apps/details?id=ots.il.ac.shenkar.ots");
             emailIntent.setType("message/rfc822");
             activity.startActivity(Intent.createChooser(emailIntent, "Choose email app..."));
         } else {

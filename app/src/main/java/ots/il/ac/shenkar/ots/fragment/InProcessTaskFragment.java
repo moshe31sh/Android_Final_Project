@@ -66,7 +66,7 @@ public class InProcessTaskFragment extends Fragment implements ItemLongClickList
     private Menu menu;
     private Animation animAlpha;
     private Task currentTask;
-    private TextView mTvEmptyWaitingList;
+    private TextView mTvEmptyWaitingList , waitingTask;
     private CloudRefreshReceiver r;
     private User user;
     private Bitmap imageBitmap;
@@ -105,6 +105,7 @@ public class InProcessTaskFragment extends Fragment implements ItemLongClickList
         animAlpha = AnimationUtils.loadAnimation(getActivity(), R.anim.anim_alpha);
         mController = new AppController(this.getContext());
         mTvEmptyWaitingList = (TextView) mView.findViewById(R.id.id_waiting_empty_list);
+        waitingTask = (TextView) mView.findViewById(R.id.id_task_number);
         mTvEmptyWaitingList.setVisibility(View.INVISIBLE);
         mRecyclerView = (RecyclerView) mView.findViewById(R.id.id_fragment_recycle_view);
         mRecyclerView.setHasFixedSize(true);
@@ -130,6 +131,8 @@ public class InProcessTaskFragment extends Fragment implements ItemLongClickList
     public void  show(){
 
         taskList = mController.getTasksListByStatus(AppConst.IN_PROCESS);
+        Integer numOfTask = mController.getTasksListByStatus(AppConst.WAITING).size();
+        waitingTask.setText(numOfTask.toString());
         mAdapter = new TasksFragmentAdapter(taskList, getContext());
         mAdapter.setmItemClickListener(this);
         mAdapter.setmItemLongClickListener(this);

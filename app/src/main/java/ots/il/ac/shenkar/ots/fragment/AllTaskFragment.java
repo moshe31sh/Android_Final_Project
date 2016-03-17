@@ -65,7 +65,7 @@ public class AllTaskFragment extends Fragment implements ItemLongClickListener,
     private CloudRefreshReceiver r;
     private Animation animAlpha;
     private Task currentTask;
-    private TextView mTvEmptyWaitingList;
+    private TextView mTvEmptyWaitingList, waitingTask;
     private boolean takePic;
     private Menu menu;
     private User user;
@@ -106,7 +106,7 @@ public class AllTaskFragment extends Fragment implements ItemLongClickListener,
         mController = new AppController(this.getContext());
         mTvEmptyWaitingList = (TextView) mView.findViewById(R.id.id_waiting_empty_list);
         mTvEmptyWaitingList.setVisibility(View.INVISIBLE);
-
+        waitingTask = (TextView) mView.findViewById(R.id.id_task_number);
         mRecyclerView = (RecyclerView) mView.findViewById(R.id.id_fragment_recycle_view);
         mRecyclerView.setHasFixedSize(true);
         // use a linear layout manager
@@ -127,6 +127,8 @@ public class AllTaskFragment extends Fragment implements ItemLongClickListener,
     }
     public void  show(){
          taskList = mController.getAllTaskFromLocalDb();
+        Integer numOfTask = mController.getTasksListByStatus(AppConst.WAITING).size();
+        waitingTask.setText(numOfTask.toString());
         mAdapter = new TasksFragmentAdapter(taskList, getContext());
         mAdapter.setmItemClickListener(this);
         mAdapter.setmItemLongClickListener(this);
