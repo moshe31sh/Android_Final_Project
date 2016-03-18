@@ -14,7 +14,7 @@ import com.shephertz.app42.paas.sdk.android.App42API;
 import com.shephertz.app42.paas.sdk.android.App42Exception;
 
 public class App42LocationManager {
-	
+
 	public static void fetchGPSLocation(Context context,App42LocationListener callback) {
 		// Getting LocationManager object
 		Location location = null;
@@ -38,9 +38,7 @@ public class App42LocationManager {
 			getLocationAddress(location, callback);
 	}
 
-	/**
-	 * @param jsonArray
-	 */
+
 	private static void getLocationAddress(final Location location,
 			final App42LocationListener callback) {
 		new Thread() {

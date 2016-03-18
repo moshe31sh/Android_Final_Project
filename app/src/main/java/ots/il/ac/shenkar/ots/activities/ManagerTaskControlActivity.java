@@ -316,7 +316,7 @@ public class ManagerTaskControlActivity extends AppCompatActivity
                     @Override
                     public void done(ParseException e) {
                         if (e == null) {
-                            sentNotification(userMail , taskTitle);
+                            sentNotification(userMail , "You have received a new Task "+taskTitle);
                         }else{
                             AppUtils.Toast(getBaseContext() , "Unable to connect to server");
                         }
