@@ -278,6 +278,8 @@ public class WaitingTaskFragment extends Fragment implements ItemLongClickListen
             mBtnSave.setVisibility(View.INVISIBLE);
             mBtnReject.setVisibility(View.VISIBLE);
             mBtnAccept.setVisibility(View.VISIBLE);
+            mCategorySpinner.setVisibility(View.INVISIBLE);
+            mPrioritySpinner.setVisibility(View.INVISIBLE);
             mEmployeeTv.setVisibility(View.INVISIBLE);
             mEmployeeTvCurrentUser.setVisibility(View.INVISIBLE);
             mBtnReject.setOnClickListener(new View.OnClickListener() {

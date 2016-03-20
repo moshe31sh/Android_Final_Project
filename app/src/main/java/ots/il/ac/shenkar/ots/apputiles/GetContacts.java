@@ -22,13 +22,19 @@ public class GetContacts extends Thread {
     private List<String> emails;
     private AppController appController;
 
-
+    /**
+     *CTOR
+     * @param context
+     */
     public GetContacts(Context context) {
         this.context = context;
         this.emails = new ArrayList<>();
         this.appController = new AppController(this.context);
     }
 
+    /**
+     * runnable
+     */
     public void run() {
         String email;
         Uri CONTENT_URI = ContactsContract.Contacts.CONTENT_URI;
@@ -56,8 +62,4 @@ public class GetContacts extends Thread {
         appController.updateLocalEmailDB(emails);
     }
 
-//
-//    public  List<String> getNameEmailDetails() {
-//        return emails;
-//    }
 }

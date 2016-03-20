@@ -1,6 +1,5 @@
 package ots.il.ac.shenkar.ots.apputiles;
 
-import java.util.regex.Pattern;
 
 /**
  * Created by moshe on 21-02-16.

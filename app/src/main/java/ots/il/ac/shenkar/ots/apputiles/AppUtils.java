@@ -35,6 +35,11 @@ import ots.il.ac.shenkar.ots.common.User;
  */
 public abstract class AppUtils {
 
+    /**
+     *
+     * @param context
+     * @param msg
+     */
     public static void Toast(Context context, String msg) {
         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
     }

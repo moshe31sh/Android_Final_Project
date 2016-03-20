@@ -83,12 +83,19 @@ public class AppController implements IAppController {
         }
     }
 
+    /**
+     * set default refresh time
+     */
     public void setDefaultRefreshInterval() {
         setDefaultRefreshInterval(5);
         AppUtils.Toast(context, AppConst.TIME_SET_DEFAULT);
 
     }
 
+    /**
+     * set time set to SharedPreferences
+     * @param timeSet
+     */
     public void setDefaultRefreshInterval(int timeSet) {
         SharedPreferences prefs = context.getSharedPreferences(AppConst.SharedPrefsName, 0);
         SharedPreferences.Editor editor = prefs.edit();
@@ -96,7 +103,9 @@ public class AppController implements IAppController {
         editor.commit();
     }
 
-
+    /**
+     * set custom refresh time
+     */
     public void setManualRefreshInterval() {
         Spinner spinner;
 
@@ -163,6 +172,9 @@ public class AppController implements IAppController {
         dialog.show();
     }
 
+    /**
+     * clear SharedPreferences
+     */
     public void clearSharedPreferences() {
         SharedPreferences prefs = context.getSharedPreferences(AppConst.SharedPrefsName, 0);
         SharedPreferences.Editor editor = prefs.edit();
@@ -170,44 +182,81 @@ public class AppController implements IAppController {
         editor.commit();
     }
 
+    /**
+     *
+     * @param user - user details
+     * @param signUpCallback - parse callback
+     */
     @Override
     public void signUp(User user, SignUpCallback signUpCallback) {
         dao.signUp(user, signUpCallback);
     }
 
+    /**
+     *
+     * @param userName
+     * @param pass
+     * @param callback
+     */
     @Override
     public void login(String userName, String pass, LogInCallback callback) {
         dao.login(userName, pass, callback);
     }
 
-
+    /**
+     *
+     * @param task
+     * @param saveCallback
+     */
     @Override
     public void createTask(Task task, SaveCallback saveCallback) {
         dao.createTask(task, saveCallback);
     }
 
-
+    /**
+     *
+     * @param manager
+     * @param findCallback
+     */
     @Override
     public void getAllUsers(String manager, FindCallback findCallback) {
         dao.getAllUsers(manager, findCallback);
     }
 
+    /**
+     *
+     * @param userEmail
+     * @param findCallback
+     */
     @Override
     public void getUserTask(String userEmail, FindCallback findCallback) {
         dao.getUserTask(userEmail, findCallback);
     }
 
-
+    /**
+     *
+     * @param task
+     * @param findCallback
+     */
     @Override
     public void updateTask(Task task, FindCallback findCallback) {
         dao.updateTask(task, findCallback);
     }
 
+    /**
+     *
+     * @param user
+     * @param deleteCallback
+     */
     @Override
     public void deleteUser(User user, DeleteCallback deleteCallback) {
         dao.deleteUser(user, deleteCallback);
     }
 
+    /**
+     *
+     * @param task
+     */
     @Override
     public void addTaskToLocalDb(Task task) {
         Task retTask = localAppDao.addTaskToLocalDb(task);
@@ -215,12 +264,20 @@ public class AppController implements IAppController {
 
     }
 
-
+    /**
+     *
+     * @param managerEmail
+     * @param findCallback
+     */
     @Override
     public void getAllTask(String managerEmail, FindCallback findCallback) {
         dao.getAllTask(managerEmail, findCallback);
     }
 
+    /**
+     *
+     * @return - task list
+     */
     @Override
     public List<Task> getAllTaskFromLocalDb() {
         ParseUser parseUser = ParseUser.getCurrentUser();
@@ -241,22 +298,37 @@ public class AppController implements IAppController {
         return taskList;
     }
 
-
+    /**
+     * delete exist table
+     */
     @Override
     public void dropTable() {
         localAppDao.dropTable();
     }
 
+    /**
+     *
+     * @param task
+     */
     @Override
     public void updateTaskLocalDb(Task task) {
         localAppDao.updateTaskLocalDb(task);
     }
 
+    /**
+     *
+     * @param context
+     * @return
+     */
     @Override
     public boolean doesDatabaseExist(Context context) {
         return localAppDao.doesDatabaseExist(context);
     }
 
+    /**
+     *
+     * @param taskFromParseList
+     */
     public void updateLocalDB(List<Task> taskFromParseList) {
         dropTable();
         for (Task taskOb : taskFromParseList) {
@@ -264,7 +336,11 @@ public class AppController implements IAppController {
         }
     }
 
-
+    /**
+     *
+     * @param status
+     * @return
+     */
     public List<Task> getTasksListByStatus(String status) {
         List<Task> allTask = getAllTaskFromLocalDb();
         List<Task> retList = new ArrayList<>();
@@ -276,25 +352,39 @@ public class AppController implements IAppController {
         return retList;
     }
 
-
+    /**
+     *
+     * @param key
+     * @param factor
+     * @param findCallback
+     */
     @Override
     public void deleteTask(String key , String factor, FindCallback findCallback) {
         dao.deleteTask(key, factor, findCallback);
     }
 
-
+    /**
+     *
+     */
     public void notifyAllOnChanges() {
         LocalBroadcastManager lbm = LocalBroadcastManager.getInstance(context);
         Intent i = new Intent("TAG_REFRESH");
         lbm.sendBroadcast(i);
     }
 
+    /**
+     *
+     * @param taskId
+     */
     @Override
     public void deleteTaskFromLocalDB(String taskId) {
         localAppDao.removeTask(taskId);
     }
 
-
+    /**
+     *
+     * @param newTask
+     */
     public void notifyNewTask(int newTask) {
         final AlertDialog.Builder alert = new AlertDialog.Builder(context);
         alert.setMessage("You have " + newTask + " new task(s)");
@@ -307,7 +397,10 @@ public class AppController implements IAppController {
         alert.show();
     }
 
-
+    /**
+     *
+     * @param tasks
+     */
     @Override
     public void updateListOfTask(List<Task> tasks) {
         if (tasks != null) {
@@ -327,6 +420,10 @@ public class AppController implements IAppController {
         }
     }
 
+    /**
+     *
+     * @param user
+     */
     public void signToNotification(String user) {
         try {
             App42API.initialize(
@@ -340,7 +437,10 @@ public class AppController implements IAppController {
         }
     }
 
-
+    /**
+     *
+     * @param taskList
+     */
     public void deleteTasksDialog(final List<Task> taskList) {
         final ProgressDialog mProgress = new ProgressDialog(context);
         mProgress.setMessage("Delete task(s)...");
@@ -402,7 +502,10 @@ public class AppController implements IAppController {
         alert.show();
     }
 
-
+    /**
+     *
+     * @return
+     */
     @Override
     public List<String> getAllEmail() {
         List<String> emails = localAppDao.getAllEmail();
@@ -412,18 +515,27 @@ public class AppController implements IAppController {
         return  emails;
     }
 
+    /**
+     *
+     * @param email
+     */
     @Override
     public void addEmailToLocalDb(String email) {
       String retEmail = localAppDao.addEmailToLocalDb(email);
     }
 
-
+    /**
+     *
+     */
     @Override
     public void dropEmailTable() {
         localAppDao.dropEmailTable();
     }
 
-
+    /**
+     *
+     * @param emails
+     */
     public void updateLocalEmailDB(List<String> emails) {
         dropTable();
         for (String email : emails) {
